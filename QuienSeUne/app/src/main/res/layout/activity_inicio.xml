@@ -37,6 +37,7 @@
                 android:id="@+id/button3"
                 android:textSize="25sp"
                 style="@style/Widget.AppCompat.Button.Borderless"
+                android:onClick="crear"
                 />
 
             <Button
@@ -46,6 +47,7 @@
                 android:id="@+id/button4"
                 android:textSize="25sp"
                 style="@style/Widget.AppCompat.Button.Borderless"
+                android:onClick="unirse"
                 />
 
             <Space
@@ -58,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button10"
                 style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+                android:onClick="cerrarSesion"
                 />
         </LinearLayout>
     </ScrollView>

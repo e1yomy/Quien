@@ -1,27 +1,17 @@
 package com.my.elyo.quienseune;
 
-import android.app.Activity;
-import android.content.Context;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
 
-public class Registro extends ActionBarActivity {
+public class UnirseEvento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_unirse_evento);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Registro");
+        getSupportActionBar().setTitle("Eventos");
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -33,5 +23,4 @@ public class Registro extends ActionBarActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
