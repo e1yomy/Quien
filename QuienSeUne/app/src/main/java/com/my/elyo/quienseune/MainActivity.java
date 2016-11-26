@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         EditText e=(EditText)findViewById(R.id.editText);
         e.clearFocus();
         getSupportActionBar().setTitle("Inicio de sesion");
+        Intent i = new Intent(this,Splash.class);
+        startActivity(i);
     }
 
     public void registrarse(View view){

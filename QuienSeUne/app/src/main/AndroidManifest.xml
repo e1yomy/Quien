@@ -18,7 +18,8 @@
         <activity android:name=".Inicio" />
         <activity android:name=".Registro" />
         <activity android:name=".CrearEvento" />
-        <activity android:name=".UnirseEvento"></activity>
+        <activity android:name=".UnirseEvento" />
+        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>
