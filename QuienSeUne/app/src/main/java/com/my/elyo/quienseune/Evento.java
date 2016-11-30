@@ -29,38 +29,19 @@ public class Evento {
     }
     public boolean guardarEvento()
     {
-        try{
-
-            return true;
-        }
-        catch (Exception ex)
-        {
-            return false;
-        }
-
-    }
-    public String insertarDatos(){
-        String que="insert int eventos values(";
         if(noHayVacios()) {
-            while (i < datos.length) {
-
-                if (i != datos.length - 1)
-                    que += "'" + datos[i] + "',";
-                else
-                    que += "'" + datos[i] + "');";
-                i++;
+            if(MainActivity.b.insertRow("eventos", datos)) {
+                return true;
             }
-            i = 0;
-            return que;
+            else
+                return false;
         }
-        else
-        {
-            return "Error: elementos vacios.";
-        }
+        return false;
+
     }
     boolean noHayVacios(){
         while (i<datos.length) {
-            if(datos[i].equals("")||datos[i].equals(" "))
+            if(datos[i].equals("")||datos[i].equals(" ")||datos[i].equals(null))
                 return false;
             i++;
         }
@@ -145,4 +126,6 @@ public class Evento {
     public String getDisponibilidad() {
         return disponibilidad;
     }
+
+
 }

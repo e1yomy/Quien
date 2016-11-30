@@ -1,5 +1,6 @@
 package com.my.elyo.quienseune;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,13 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Inicio extends AppCompatActivity {
-
+    static B b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        getSupportActionBar().setTitle("Inicio");
-
+        b= new B(this);
     }
     public void crear(View view)
     {

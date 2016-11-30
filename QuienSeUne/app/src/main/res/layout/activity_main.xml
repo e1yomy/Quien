@@ -11,27 +11,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.my.elyo.quienseune.MainActivity">
 
-    <ScrollView
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:layout_width="237dp"
+            android:layout_height="251dp"
+            app:srcCompat="@drawable/hombre"
+            android:id="@+id/imageView3"
+            />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:weightSum="1"
-            android:gravity="center_vertical"
-            >
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="251dp"
-                app:srcCompat="@drawable/hombre"
-                android:id="@+id/imageView3"
-
-                />
+            android:layout_height="match_parent">
 
             <TextView
                 android:paddingTop="20dp"
@@ -91,9 +92,9 @@
                 android:layout_weight="0.12"
                 android:onClick="registrarse"
                 />
-
-
         </LinearLayout>
-    </ScrollView>
+
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -8,10 +8,11 @@ import android.widget.TextView;
 
 public class Usuario {
     static TextView t;
-    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, nombre text not null, apellidotext not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
+    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, contrasena text not null, nombre text not null, apellidotext not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
     String[] datos;
     String usuario;
     String telefono;
+    String contrasena;
     String nombre;
     String apellido;
     String sexo;
@@ -21,13 +22,16 @@ public class Usuario {
     int i=0;
 
     public Usuario(){
-        datos= new String[]{usuario, telefono, nombre, apellido, sexo, edad, ciudad, descripcion};
+        datos= new String[]{usuario, telefono, contrasena, nombre, apellido, sexo, edad, ciudad, descripcion};
     }
     public String getUsuario() {
         return usuario;
     }
     public String getTelefono() {
         return telefono;
+    }
+    public String getContrasena() {
+        return contrasena;
     }
     public String getNombre() {
         return nombre;
@@ -52,27 +56,39 @@ public class Usuario {
     }
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+        datos[0]=usuario;
     }
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+        datos[1]=telefono;
+    }
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+        datos[2]=contrasena;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+        datos[3]=nombre;
     }
     public void setApellido(String apellido) {
         this.apellido = apellido;
+        datos[4]=apellido;
     }
     public void setSexo(String sexo) {
         this.sexo = sexo;
+        datos[5]=sexo;
     }
     public void setEdad(String edad) {
         this.edad = edad;
+        datos[6]=edad;
     }
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+        datos[7]=ciudad;
     }
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+        datos[8]=descripcion;
     }
     public void setDatos(String[] datos) {
         this.datos = datos;
@@ -81,37 +97,24 @@ public class Usuario {
 
         try{
             //llamar conexion a base de datos y enviar consulta de insert con insertarDatos()
-            return true;
+            if(noHayVacios()) {
+                if(Registro.b.insertRow("usuarios", datos)) {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            return false;
         }
         catch (Exception ex)
         {
             return false;
         }
     }
-    String insertarDatos(){
-
-        String que="insert into usuarios values(";
-        if(noHayVacios()) {
-            while (i < datos.length) {
-
-                if (i != datos.length - 1)
-                    que += "'" + datos[i] + "',";
-                else
-                    que += "'" + datos[i] + "');";
-                i++;
-            }
-            i = 0;
-            return que;
-        }
-        else
-        {
-            return "Error: elementos vacios.";
-        }
-
-    }
     boolean noHayVacios(){
+        i=0;
         while (i<datos.length) {
-            if(datos[i].equals("")||datos[i].equals(" "))
+            if(datos[i].equals("")||datos[i].equals(" ") || datos[i]==null)
                 return false;
             i++;
         }

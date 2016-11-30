@@ -15,8 +15,8 @@ public class B extends SQLiteOpenHelper{
     public static Integer id=1;
     public static String er="";
 
-    public B(){
-        super(MainActivity.c, "quien", null, 1);
+    public B(Context c){
+        super(c, "quien", null, 1);
         //B b=new B(this.Context, "quien");
     }
     @Override
@@ -32,7 +32,9 @@ public class B extends SQLiteOpenHelper{
     public boolean insertRow(String t, String []v)
     {
         try{
-            getWritableDatabase().execSQL(createInsertQuery(t,v));
+            updateId(t);
+            getWritableDatabase()
+                    .execSQL(createInsertQuery(t,v));
             return true;
         }
         catch (Exception ex)
@@ -42,27 +44,16 @@ public class B extends SQLiteOpenHelper{
         }
 
     }
-    public boolean insertRow(String query)
-    {
-        try{
-            getWritableDatabase().execSQL(query);
-            return true;
-        }
-        catch (Exception ex)
-        {
-            er=ex.getMessage();
-            return false;
-        }
-    }
+
     String createInsertQuery(String t, String []v)
     {
-        lastQuery="insert into "+t+" values ('"+id+"'";
+        lastQuery="insert into "+t+" values ('"+id+"',";
         for(byte i=0;i<v.length;i++)
         {
             if(i!=v.length-1)
-                lastQuery+=v[i]+"', '";
+                lastQuery+="'"+v[i]+"', ";
             else
-                lastQuery+=v[i]+"');";
+                lastQuery+="'"+v[i]+"')";
         }
         return lastQuery;
     }
@@ -106,12 +97,12 @@ public class B extends SQLiteOpenHelper{
         }
 
     }
-    public Cursor select(String t, String c)
+    public Cursor selectAll(String t, String c)
     {
         try{
             lastQuery="select * from "+t+" order by "+c+" asc";
-            
-
+            Cursor cu=getReadableDatabase().rawQuery(lastQuery,null);
+            return cu;
         }
         catch(Exception ex)
         {
