@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 public class CrearEvento extends AppCompatActivity {
     static B b;
+    static String fechai, fechaf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

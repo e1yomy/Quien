@@ -173,6 +173,28 @@
                 android:textAlignment="textStart"
                 android:textSize="20sp" />
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    app:srcCompat="@drawable/delete"
+                    android:id="@+id/imageButton"
+                    android:scaleType="fitCenter"
+                    android:layout_height="50dp"
+                    android:onClick="cancelar (Registro)" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    app:srcCompat="@drawable/accept"
+                    android:id="@+id/imageButton3"
+                    android:scaleType="fitCenter"
+                    android:layout_height="50dp"
+                    android:onClick="guardar (Registro)" />
+            </LinearLayout>
+
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -184,7 +206,8 @@
                     android:id="@+id/button6"
                     android:layout_row="0"
                     android:layout_column="7"
-                    android:onClick="guardar" />
+                    android:onClick="guardar"
+                    android:visibility="invisible" />
 
                 <Button
                     android:text="Cancelar"
@@ -193,7 +216,9 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_width="150dp"
-                    android:onClick="calcelar" />
+                    android:onClick="calcelar"
+                    android:visibility="invisible" />
+
             </GridLayout>
 
         </LinearLayout>

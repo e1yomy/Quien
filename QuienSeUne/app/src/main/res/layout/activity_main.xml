@@ -27,6 +27,7 @@
             android:layout_height="218dp"
             app:srcCompat="@drawable/hombre"
             android:id="@+id/imageView3"
+            android:paddingTop="@dimen/activity_vertical_margin"
             />
 
         <LinearLayout

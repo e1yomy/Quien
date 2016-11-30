@@ -10,64 +10,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.my.elyo.quienseune.Inicio">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <Button
+        android:text="Crear"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/button3"
+        android:textSize="30sp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:onClick="crear"
+        android:background="@drawable/add"
+        android:layout_marginStart="39dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:text="Unirse"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/button4"
+        android:textSize="30sp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:onClick="unirse"
+        android:background="@drawable/find"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="50dp"/>
 
 
+    <Button
+        android:text="Cerrar sesión"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:onClick="cerrarSesion"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+    " />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:weightSum="1"
-            android:gravity="center_vertical"
-            >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:text="Crear"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:id="@+id/button3"
-                    android:textSize="25sp"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="Unirse"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:id="@+id/button4"
-                    android:textSize="25sp"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <Button
-                android:text="Cerrar sesión"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button10"
-                style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
-                />
-
-        </LinearLayout>
-    </ScrollView>
 </RelativeLayout>
