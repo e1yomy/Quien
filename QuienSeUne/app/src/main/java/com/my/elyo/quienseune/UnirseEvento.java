@@ -1,5 +1,6 @@
 package com.my.elyo.quienseune;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -22,5 +23,8 @@ public class UnirseEvento extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void Consulta(){
+        //Cursor c= MainActivity.b.
     }
 }

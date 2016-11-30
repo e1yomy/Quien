@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 public class Evento {
     static TextView t;
-    static String que="create table eventos(id text not null, titulo text not null,fechai text not null,horai text not null,fechaf text not null,horaf text not null,ciudad text not null,lugar text not null,latitud text not null,longitud text not null,descripcion text not null,disponibilidad)";
+    static String que="create table eventos(id text not null, usuario text not null, titulo text not null,fechai text not null,horai text not null,fechaf text not null,horaf text not null,ciudad text not null,lugar text not null,latitud text not null,longitud text not null,descripcion text not null,disponibilidad)";
     String[] datos;
+    String usuario;
     String titulo;
     String fechai;
     String horai;
@@ -69,6 +70,9 @@ public class Evento {
     public void setDatos(String[] datos) {
         this.datos = datos;
     }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -107,6 +111,9 @@ public class Evento {
     }
     public String getTitulo() {
         return titulo;
+    }
+    public String getUsuario() {
+        return usuario;
     }
     public String getFechai() {
         return fechai;

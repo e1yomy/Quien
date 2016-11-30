@@ -1,5 +1,6 @@
 package com.my.elyo.quienseune;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +9,15 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     public static boolean sesion=false;
+    static Context c ;
+    static B b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EditText e=(EditText)findViewById(R.id.editText);
-        e.clearFocus();
-        getSupportActionBar().setTitle("Inicio de sesion");
-
+        c = this;
+        b= new B();
     }
 
     public void registrarse(View view){

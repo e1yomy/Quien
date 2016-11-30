@@ -15,8 +15,8 @@ public class B extends SQLiteOpenHelper{
     public static Integer id=1;
     public static String er="";
 
-    public B(Context context){
-        super(context, "quien", null, 1);
+    public B(){
+        super(MainActivity.c, "quien", null, 1);
         //B b=new B(this.Context, "quien");
     }
     @Override
@@ -79,7 +79,6 @@ public class B extends SQLiteOpenHelper{
             return false;
         }
     }
-
     public boolean updateQuery(String t, String w, String [] v)
     {
         try{
@@ -107,7 +106,19 @@ public class B extends SQLiteOpenHelper{
         }
 
     }
+    public Cursor select(String t, String c)
+    {
+        try{
+            lastQuery="select * from "+t+" order by "+c+" asc";
+            
 
+        }
+        catch(Exception ex)
+        {
+            er=ex.getMessage();
+            return null;
+        }
+    }
 
 
 }
