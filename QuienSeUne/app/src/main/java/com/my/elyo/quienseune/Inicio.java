@@ -25,8 +25,17 @@ public class Inicio extends AppCompatActivity {
         Intent i = new Intent(this,UnirseEvento.class);
         startActivity(i);
     }
+    @Override
+    public void onBackPressed()
+    {
+        // code here to show dialog
+        super.onBackPressed();
+    }
     public void cerrarSesion(View view)
     {
+        A.sesion=false;
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
         finish();
     }
 }

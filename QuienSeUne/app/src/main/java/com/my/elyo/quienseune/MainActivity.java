@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static boolean sesion=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
         EditText e=(EditText)findViewById(R.id.editText);
         e.clearFocus();
         getSupportActionBar().setTitle("Inicio de sesion");
-        Intent i = new Intent(this,Splash.class);
-        startActivity(i);
+
     }
 
     public void registrarse(View view){
@@ -24,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void iniciarSesion(View view){
+        A.sesion=true;
         Intent i = new Intent(this,Inicio.class);
         startActivity(i);
     }

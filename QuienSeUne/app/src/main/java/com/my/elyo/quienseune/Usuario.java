@@ -1,10 +1,14 @@
 package com.my.elyo.quienseune;
 
+import android.widget.TextView;
+
 /**
  * Created by elyo_ on 24/11/2016.
  */
 
 public class Usuario {
+    static TextView t;
+    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, nombre text not null, apellidotext not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
     String[] datos;
     String usuario;
     String telefono;
@@ -43,7 +47,9 @@ public class Usuario {
     public String getDescripcion(){
         return descripcion;
     }
-
+    public String[] getDatos() {
+        return datos;
+    }
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
@@ -68,7 +74,9 @@ public class Usuario {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    public void setDatos(String[] datos) {
+        this.datos = datos;
+    }
     public boolean guardarUsuario(){
 
         try{
