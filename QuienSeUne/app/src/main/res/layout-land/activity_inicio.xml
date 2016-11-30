@@ -28,6 +28,10 @@
             android:gravity="center_vertical"
             >
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp" />
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"

@@ -33,7 +33,7 @@ public class Splash extends AppCompatActivity{
             i = new Intent(this, MainActivity.class);
         }
         startActivity(i);
-        Toast.makeText(getBaseContext(), "asddas", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getBaseContext(), "asddas", Toast.LENGTH_SHORT).show();
     }
 
 

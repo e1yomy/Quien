@@ -25,9 +25,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".Inicio" />
-        <activity android:name=".Registro" />
+            android:theme="@style/Principal"></activity>
+        <activity android:name=".Inicio"
+            android:theme="@style/Principal"
+            />
+        <activity android:name=".Registro"/>
         <activity android:name=".CrearEvento" />
         <activity android:name=".UnirseEvento" />
 

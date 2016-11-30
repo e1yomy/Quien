@@ -28,7 +28,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="73dp" />
+                android:layout_height="100dp" />
 
             <Button
                 android:text="Crear"
@@ -52,7 +52,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="52dp" />
+                android:layout_height="120dp" />
 
             <Button
                 android:text="Cerrar sesión"
