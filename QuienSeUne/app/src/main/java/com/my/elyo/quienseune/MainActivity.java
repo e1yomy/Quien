@@ -12,8 +12,9 @@ import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    public static boolean sesion=true;
+
     static B b;
+    Configuracion conf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //EditText e=(EditText)findViewById(R.id.editText);
         b= new B(this);
+        conf=new Configuracion(this);
 
     }
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void iniciarSesion(View view){
-        A.sesion=true;
+        conf.iniciarSesion();
         Intent i = new Intent(this,Inicio.class);
         startActivity(i);
     }

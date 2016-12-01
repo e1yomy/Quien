@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class Inicio extends AppCompatActivity {
     static B b;
+    private Configuracion conf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,7 @@ public class Inicio extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_inicio);
         b= new B(this);
+        conf=new Configuracion(this);
     }
     public void crear(View view)
     {
@@ -33,11 +36,11 @@ public class Inicio extends AppCompatActivity {
     public void onBackPressed()
     {
         // code here to show dialog
-        super.onBackPressed();
+        //super.onBackPressed();
     }
     public void cerrarSesion(View view)
     {
-        A.sesion=false;
+        conf.cerrarSesion();
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
         finish();

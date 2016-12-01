@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 public class Splash extends AppCompatActivity{
     Intent i;
+    Configuracion conf;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,13 +21,17 @@ public class Splash extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
+        conf=new Configuracion(this);
+        A.S1= conf.haySesion();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (A.sesion)
-                    i= new Intent(Splash.this, Inicio.class);
-                else
-                    i = new Intent(Splash.this, MainActivity.class);
+                i = new Intent(Splash.this, MainActivity.class);
+                try {
+                    if (A.S1.equals("true"))
+                        i = new Intent(Splash.this, Inicio.class);
+                }
+                catch(Exception ex){}
                 startActivity(i);
             }},1500);
     }

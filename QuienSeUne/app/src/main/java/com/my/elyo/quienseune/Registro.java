@@ -68,12 +68,17 @@ public class Registro extends ActionBarActivity {
             u.setEdad(e6.getSelectedItem().toString());
             u.setCiudad(e7.getText().toString());
             u.setDescripcion(e8.getText().toString());
-            if (u.guardarUsuario()) {
-                Toast.makeText(getBaseContext(),"Usuario registrado." , Toast.LENGTH_SHORT).show();
-                Toast.makeText(getBaseContext(),"Iniciar sesion para continuar." , Toast.LENGTH_SHORT).show();
-                finish();
-            } else {
-                Toast.makeText(getBaseContext(),B.er+"\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos." , Toast.LENGTH_SHORT).show();
+            if(u.noHayVacios()) {
+                if (u.guardarUsuario()) {
+                    Toast.makeText(getBaseContext(), "Usuario registrado.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Iniciar sesion para continuar.", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(getBaseContext(), B.er + "\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos.", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else {
+                Toast.makeText(getBaseContext(), "Verificar los datos por datos vacios.", Toast.LENGTH_SHORT).show();
             }
         }
         else
