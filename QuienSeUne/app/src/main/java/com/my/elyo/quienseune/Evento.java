@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class Evento {
     static TextView t;
-    static String que="create table eventos(id text not null, usuario text not null, titulo text not null,fechai text not null,horai text not null,fechaf text not null,horaf text not null,ciudad text not null,lugar text not null,latitud text not null,longitud text not null,descripcion text not null,disponibilidad)";
+    static String que="create table eventos(id text not null, usuario text not null, titulo text not null,fechai text not null,horai text not null,fechaf text not null,horaf text not null,ciudad text not null,lugar text not null,latitud text not null,longitud text not null,disponibilidad text not null, descripcion text not null)";
     String[] datos;
     String usuario;
     String titulo;

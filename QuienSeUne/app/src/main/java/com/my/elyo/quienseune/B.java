@@ -42,12 +42,11 @@ public class B extends SQLiteOpenHelper{
             er=ex.getMessage();
             return false;
         }
-
     }
 
     String createInsertQuery(String t, String []v)
     {
-        lastQuery="insert into "+t+" values ('"+id+"',";
+        lastQuery="INSERT INTO "+t+" VALUES ('"+id+"',";
         for(byte i=0;i<v.length;i++)
         {
             if(i!=v.length-1)

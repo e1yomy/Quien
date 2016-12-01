@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class UnirseEvento extends AppCompatActivity {
     static Context c;
+    static B b;
     ArrayList<String> lista = new ArrayList<>();
 
     @Override
@@ -21,7 +22,8 @@ public class UnirseEvento extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Eventos");
         c=this;
-
+        b= new B(c);
+        Consulta();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -34,7 +36,7 @@ public class UnirseEvento extends AppCompatActivity {
         }
     }
     public void Consulta(){
-        Cursor cr=MainActivity.b.selectAll("usuarios","id");
+        Cursor cr=b.selectAll("usuarios","id");
         try {
             if(cr.getCount()<1) {
                 //t.setText("Lista de alumnos vacia.");

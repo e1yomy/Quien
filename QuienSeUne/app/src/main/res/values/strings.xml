@@ -147,4 +147,6 @@
         <item>14</item>
         <item>15</item>
     </string-array>
+    <string name="title_activity_ubicacion">Seleccionar lugar</string>
+    <string name="google_maps_key">Seleccionar lugar</string>
 </resources>

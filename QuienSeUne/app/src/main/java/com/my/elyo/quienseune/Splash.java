@@ -10,11 +10,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class Splash extends AppCompatActivity{
-
-    Intent i1;
-    Intent i2;
     Intent i;
-    Thread t;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,18 +18,15 @@ public class Splash extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-
-        //i1 = new Intent(this, Inicio.class);
-        //i2 = new Intent(this, MainActivity.class);
-        if (A.sesion) {
-            //startActivity(i1);
-            i= new Intent(this, Inicio.class);
-        } else {
-            //startActivity(i2);
-            i = new Intent(this, MainActivity.class);
-        }
-        startActivity(i);
-        //Toast.makeText(getBaseContext(), "asddas", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (A.sesion)
+                    i= new Intent(Splash.this, Inicio.class);
+                else
+                    i = new Intent(Splash.this, MainActivity.class);
+                startActivity(i);
+            }},1500);
     }
 
 

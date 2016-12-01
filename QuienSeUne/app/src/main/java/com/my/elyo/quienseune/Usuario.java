@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class Usuario {
     static TextView t;
-    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, contrasena text not null, nombre text not null, apellidotext not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
+    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, contrasena text not null, nombre text not null, apellido text not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
     String[] datos;
     String usuario;
     String telefono;
@@ -98,11 +98,8 @@ public class Usuario {
         try{
             //llamar conexion a base de datos y enviar consulta de insert con insertarDatos()
             if(noHayVacios()) {
-                if(Registro.b.insertRow("usuarios", datos)) {
-                    return true;
-                }
-                else
-                    return false;
+                Registro.b.insertRow("usuarios", datos);
+                return true;
             }
             return false;
         }

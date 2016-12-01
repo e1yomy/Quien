@@ -28,20 +28,26 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Titulo"
-                android:id="@+id/editText4" />
+                android:id="@+id/evento1edit" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Lugar"
-                />
+                android:id="@+id/evento2edit" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Ciudad"
-                />
+                android:id="@+id/evento3edit" />
+
+            <Button
+                android:text="Asignar ubicación al evento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventoGps" />
 
             <TextView
                 android:text="Fecha y hora de inicio"
@@ -58,22 +64,22 @@
 
                 <DatePicker
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:id="@+id/datePicker1"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento4datepicker"
                     style="@android:style/Widget.DatePicker" />
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:id="@+id/spinner1"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento5spinner1"
                     android:layout_weight="1"
                     android:entries="@array/horas"
                     />
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:id="@+id/spinner2"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento5spinner2"
                     android:layout_weight="1"
                     android:entries="@array/minutos"
                     />
@@ -94,21 +100,21 @@
 
                 <DatePicker
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:id="@+id/datePicker2"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento6datepicker"
                     style="@android:style/Widget.DatePicker" />
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:id="@+id/spinner3"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento7spinner1"
                     android:layout_weight="1"
                     android:entries="@array/horas"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:id="@+id/spinner4"
+                    android:layout_height="50dp"
+                    android:id="@+id/evento7spinner2"
                     android:layout_weight="1"
                     android:entries="@array/minutos"/>
 
@@ -131,7 +137,7 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/spinner5"
+                    android:id="@+id/evento8spinner"
                     android:layout_weight="1"
                     android:entries="@array/disponibilidad"/>
             </LinearLayout>
@@ -141,7 +147,7 @@
                 android:layout_height="86dp"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/editText3"
+                android:id="@+id/evento9edit"
                 android:hint="Descripción del evento" />
             <LinearLayout
                 android:orientation="horizontal"
@@ -153,16 +159,14 @@
                     app:srcCompat="@drawable/delete"
                     android:id="@+id/imageButton"
                     android:scaleType="fitCenter"
-                    android:layout_height="50dp"
-                    />
+                    android:layout_height="60dp" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     app:srcCompat="@drawable/accept"
                     android:id="@+id/imageButton3"
                     android:scaleType="fitCenter"
-                    android:layout_height="50dp"
-                    />
+                    android:layout_height="60dp" />
             </LinearLayout>
 
         </LinearLayout>
