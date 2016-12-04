@@ -6,6 +6,7 @@
         <item name="colorPrimary">#880101</item>
         <item name="colorPrimaryDark">#A55E5E</item>
         <item name="colorAccent">#B6423C</item>
+        <item name="android:windowActionBarOverlay">true</item>
     </style>
     <style name="Principal" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->

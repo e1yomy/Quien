@@ -1,6 +1,7 @@
 package com.my.elyo.quienseune;
 
 import android.content.Context;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,8 +31,12 @@ public class CrearEvento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_evento);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Crear evento");
+        ActionBar ab=getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayShowHomeEnabled(true);
+        ab.setTitle("Crear evento");
+        ab.setIcon(R.mipmap.ic_add);
+
         b=new B(this);
         e1 = (EditText)findViewById(R.id.evento1edit);
         e2 = (EditText)findViewById(R.id.evento2edit);
@@ -59,30 +64,28 @@ public class CrearEvento extends AppCompatActivity {
         finish();
     }
     public void guardar(View view){
-        /*if(c1.getText().toString().equals(c2.getText().toString())) {
-            u = new Usuario();
-            u.setUsuario(e1.getText().toString());
-            u.setTelefono(e2.getText().toString());
-            u.setContrasena(c1.getText().toString());
-            u.setNombre(e3.getText().toString());
-            u.setApellido(e4.getText().toString());
-            u.setSexo(e5.getSelectedItem().toString());
-            u.setEdad(e6.getSelectedItem().toString());
-            u.setCiudad(e7.getText().toString());
-            u.setDescripcion(e8.getText().toString());
-            if (u.guardarUsuario()) {
-                Toast.makeText(getBaseContext(),"Usuario registrado." , Toast.LENGTH_SHORT).show();
-                Toast.makeText(getBaseContext(),"Iniciar sesion para continuar." , Toast.LENGTH_SHORT).show();
-                finish();
-            } else {
-                Toast.makeText(getBaseContext(),B.er+"\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos." , Toast.LENGTH_SHORT).show();
-            }
+        e= new Evento();
+        e.setUsuario("usr");
+        e.setTitulo(e1.getText().toString());
+        e.setFechai(e4.getDayOfMonth()+"/"+e4.getMonth()+"/"+e4.getYear());
+        e.setHorai(e51.getSelectedItem().toString()+":"+e52.getSelectedItem().toString());
+        e.setFechaf(e6.getDayOfMonth()+"/"+e6.getMonth()+"/"+e6.getYear());
+        e.setHoraf(e71.getSelectedItem().toString()+":"+e72.getSelectedItem().toString());
+        e.setCiudad(e3.getText().toString());
+        e.setLugar(e2.getText().toString());
+        e.setLatitud("--");
+        e.setLongitud("--");
+        e.setDisponibilidad(e8.getSelectedItem().toString());
+        e.setDescripcion(e9.getText().toString());
+
+        if(e.guardarEvento())
+        {
+            Toast.makeText(getBaseContext(),"Evento creado." , Toast.LENGTH_SHORT).show();
+            finish();
         }
         else
         {
-            c1.setText("");
-            c2.setText("");
-            Toast.makeText(getBaseContext(),"Los campos de contrasena no coinciden.\nVerificar y reintentar." , Toast.LENGTH_SHORT).show();
-        }*/
+            Toast.makeText(getBaseContext(),B.er+"\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos." , Toast.LENGTH_SHORT).show();
+        }
     }
 }

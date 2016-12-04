@@ -37,6 +37,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:noHistory="true"
             android:theme="@style/Principal" />
         <activity
             android:name=".Inicio"
@@ -61,7 +62,9 @@
             android:name=".Ubicacion"
             android:label="@string/title_activity_ubicacion"
             android:theme="@style/AppTheme" />
-        <activity android:name=".AcercaDe"></activity>
+        <activity android:name=".AcercaDe" />
+        <activity android:name=".MostrarEvento" />
+        <activity android:name=".MostrarUsuario"></activity>
     </application>
 
 </manifest>

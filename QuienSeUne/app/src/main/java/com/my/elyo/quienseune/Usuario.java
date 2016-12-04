@@ -1,5 +1,6 @@
 package com.my.elyo.quienseune;
 
+import android.database.Cursor;
 import android.widget.TextView;
 
 /**
@@ -8,7 +9,17 @@ import android.widget.TextView;
 
 public class Usuario {
     static TextView t;
-    static String que="create table usuarios (id text not null, usuario text not null, telefono text not null, contrasena text not null, nombre text not null, apellido text not null,sexo text not null, edad text not null,ciudad text not null,descripcion text not null)";
+    static String que="create table usuarios (" +
+            "id text not null, " +
+            "usuario text not null, " +
+            "telefono text not null, " +
+            "contrasena text not null, " +
+            "nombre text not null, " +
+            "apellido text not null," +
+            "sexo text not null, " +
+            "edad text not null," +
+            "ciudad text not null," +
+            "descripcion text not null)";
     String[] datos;
     String usuario;
     String telefono;
@@ -117,6 +128,28 @@ public class Usuario {
         }
         return true;
     }
-
+    static boolean existeUsuario(String u, String p)
+    {
+        String lastQuery="select * from usuarios where usuario='"+u+"' and contrasena='"+p+"'";
+        Cursor cr =Registro.b.select(lastQuery);
+        try {
+            if(cr.getCount()<1) {
+                //t.setText("Lista de alumnos vacia.");
+            }
+            if (cr.moveToFirst()) {
+                do {
+                    if (cr.getString(1).equals(u) && cr.getString(2).equals(p)) {
+                        A.S2=cr.getString(0);
+                        return true;
+                    }
+                } while (cr.moveToNext());
+            }
+            return false;
+        }
+        catch (Exception ex) {
+            //t.setText(ex.getMessage());
+            return false;
+        }
+    }
 
 }

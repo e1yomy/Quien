@@ -99,7 +99,7 @@ public class B extends SQLiteOpenHelper{
     public Cursor selectAll(String t, String c)
     {
         try{
-            lastQuery="select * from "+t+" order by "+c+" asc";
+            lastQuery="select * from "+t+" orderby "+c+" asc";
             Cursor cu=getReadableDatabase().rawQuery(lastQuery,null);
             return cu;
         }
@@ -108,6 +108,57 @@ public class B extends SQLiteOpenHelper{
             er=ex.getMessage();
             return null;
         }
+    }
+    public Cursor selectAll(String t)
+    {
+        try{
+            lastQuery="select * from "+t;
+            Cursor cu=getReadableDatabase().rawQuery(lastQuery,null);
+            return cu;
+        }
+        catch(Exception ex)
+        {
+            er=ex.getMessage();
+            return null;
+        }
+    }
+    public Cursor select(String s)
+    {
+        try{
+            Cursor cu=getReadableDatabase().rawQuery(s,null);
+            return cu;
+        }
+        catch(Exception ex)
+        {
+            er=ex.getMessage();
+            return null;
+        }
+    }
+    public Cursor selectRow(String t, String w, String v){
+        lastQuery="select * from "+t+" where "+w+"='"+v+"'";
+        Cursor c=getReadableDatabase().rawQuery(lastQuery,null);
+        return c;
+    }
+    public Cursor selectRow(String s){
+
+        return null;
+    }
+    public Usuario buscarUsuario(String ur)
+    {
+        Usuario u=new Usuario();
+        lastQuery="select * from usuarios where usuario='"+ur+"'";
+        Cursor c = getReadableDatabase().rawQuery(lastQuery,null);
+
+        u.setUsuario(c.getString(1));
+        u.setTelefono(c.getString(2));
+        u.setContrasena(c.getString(3));
+        u.setNombre(c.getString(4));
+        u.setApellido(c.getString(5));
+        u.setSexo(c.getString(6));
+        u.setEdad(c.getString(7));
+        u.setCiudad(c.getString(8));
+        u.setDescripcion(c.getString(9));
+        return u;
     }
 
 

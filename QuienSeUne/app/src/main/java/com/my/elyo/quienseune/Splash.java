@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 public class Splash extends AppCompatActivity{
     Intent i;
-    Configuracion conf;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +19,6 @@ public class Splash extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-        conf=new Configuracion(this);
-        A.S1= conf.haySesion();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

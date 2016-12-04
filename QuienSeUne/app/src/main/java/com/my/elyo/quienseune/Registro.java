@@ -1,15 +1,18 @@
 package com.my.elyo.quienseune;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Registro extends ActionBarActivity {
+public class Registro extends AppCompatActivity {
     static B b;
     Usuario u;
     EditText e1 ;
@@ -22,13 +25,16 @@ public class Registro extends ActionBarActivity {
     EditText e8 ;
     EditText c1 ;
     EditText c2 ;
-
+    Intent inin ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Registro");
+        ActionBar ab=getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayShowHomeEnabled(true);
+        ab.setTitle("Registro");
+        ab.setIcon(R.mipmap.ic_hombre);
 
 
         e1 = (EditText)findViewById(R.id.registro1edit);
@@ -42,11 +48,13 @@ public class Registro extends ActionBarActivity {
         c1 = (EditText)findViewById(R.id.registro1contra);
         c2 = (EditText)findViewById(R.id.registro2contra);
         b=new B(this);
+        inin = new Intent(this,MainActivity.class);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home: //hago un case por si en un futuro agrego mas opciones
+                startActivity(inin);
                 finish();
                 return true;
             default:
@@ -54,6 +62,7 @@ public class Registro extends ActionBarActivity {
         }
     }
     public void cancelar(View view){
+        startActivity(inin);
         finish();
     }
     public void guardar(View view){

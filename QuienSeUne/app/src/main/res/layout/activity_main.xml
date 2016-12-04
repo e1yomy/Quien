@@ -12,91 +12,95 @@
     tools:context="com.my.elyo.quienseune.MainActivity">
 
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:weightSum="1"
-        android:gravity="center_vertical"
-        >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="218dp"
-            app:srcCompat="@drawable/hombre"
-            android:id="@+id/imageView3"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="1">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:weightSum="1"
+            android:gravity="center_vertical"
+            >
 
-            <TextView
-                android:paddingTop="20dp"
-                android:text="Iniciar sesión"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:textAlignment="center"
-                android:paddingBottom="20dp"
-                android:textSize="22sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:hint="Número telefónico"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editText2"
-                android:hint="Contraseña"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <Button
-                android:text="Iniciar sesión"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button"
-                android:textAlignment="center"
-                android:layout_gravity="center_vertical"
-                android:textSize="18sp"
-                style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
-                android:onClick="iniciarSesion"
+                android:layout_height="218dp"
+                app:srcCompat="@drawable/hombre"
+                android:id="@+id/imageView3"
+                android:paddingTop="@dimen/activity_vertical_margin"
                 />
 
-            <Space
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="23dp"
-                android:layout_weight="0.71" />
+                android:layout_height="match_parent"
+                android:weightSum="1">
 
-            <Button
-                android:text="Registrarse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"
-                android:textAlignment="center"
-                android:layout_gravity="center_vertical"
-                android:textSize="14sp"
-                style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
-                android:onClick="registrarse"
-                />
+                <TextView
+                    android:paddingTop="20dp"
+                    android:text="Iniciar sesión"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:textAlignment="center"
+                    android:paddingBottom="20dp"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:id="@+id/editText"
+                    android:hint="Número telefónico"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/editText2"
+                    android:hint="Contraseña"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Iniciar sesión"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="18sp"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+                    android:onClick="iniciarSesion"
+                    />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp"
+                    android:layout_weight="0.71" />
+
+                <Button
+                    android:text="Registrarse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button2"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="14sp"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+                    android:onClick="registrarse"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
-
-
-    </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>
