@@ -145,20 +145,25 @@ public class B extends SQLiteOpenHelper{
     }
     public Usuario buscarUsuario(String ur)
     {
-        Usuario u=new Usuario();
-        lastQuery="select * from usuarios where usuario='"+ur+"'";
-        Cursor c = getReadableDatabase().rawQuery(lastQuery,null);
-
-        u.setUsuario(c.getString(1));
-        u.setTelefono(c.getString(2));
-        u.setContrasena(c.getString(3));
-        u.setNombre(c.getString(4));
-        u.setApellido(c.getString(5));
-        u.setSexo(c.getString(6));
-        u.setEdad(c.getString(7));
-        u.setCiudad(c.getString(8));
-        u.setDescripcion(c.getString(9));
-        return u;
+        try {
+            Usuario u = new Usuario();
+            lastQuery = "select * from usuarios where usuario='" + ur + "'";
+            Cursor c = getReadableDatabase().rawQuery(lastQuery, null);
+            u.setUsuario(c.getString(1));
+            u.setTelefono(c.getString(2));
+            u.setContrasena(c.getString(3));
+            u.setNombre(c.getString(4));
+            u.setApellido(c.getString(5));
+            u.setSexo(c.getString(6));
+            u.setEdad(c.getString(7));
+            u.setCiudad(c.getString(8));
+            u.setDescripcion(c.getString(9));
+            return u;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
     }
 
 

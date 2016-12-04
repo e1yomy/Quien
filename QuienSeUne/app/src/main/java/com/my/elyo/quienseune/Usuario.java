@@ -151,5 +151,9 @@ public class Usuario {
             return false;
         }
     }
+    static Cursor mostrarUsuario(String id)
+    {
+        return  MostrarUsuario.b.selectRow("usuarios","usuario",id);
+    }
 
 }

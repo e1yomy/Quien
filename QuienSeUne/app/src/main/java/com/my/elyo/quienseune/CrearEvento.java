@@ -65,7 +65,7 @@ public class CrearEvento extends AppCompatActivity {
     }
     public void guardar(View view){
         e= new Evento();
-        e.setUsuario("usr");
+        e.setUsuario("yomy");
         e.setTitulo(e1.getText().toString());
         e.setFechai(e4.getDayOfMonth()+"/"+e4.getMonth()+"/"+e4.getYear());
         e.setHorai(e51.getSelectedItem().toString()+":"+e52.getSelectedItem().toString());

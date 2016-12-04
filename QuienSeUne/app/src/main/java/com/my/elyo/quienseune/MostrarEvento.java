@@ -43,10 +43,15 @@ public class MostrarEvento extends AppCompatActivity {
             if (c.moveToFirst()) {
                 do {
                     //ar.add(cr.getString(0) + " - " + cr.getString(2)+ ", " + cr.getString(1));
-                    for (byte q = 2; q < c.getColumnCount(); q++)
+                    for (byte q = 1; q < c.getColumnCount(); q++)
                     {
                         switch (q)
                         {
+
+                            case 1:
+                                A.S2=c.getString(q);
+                                //ar.add("Usuario: "+ c.getString(q));
+                                break;
                             case 2:
                                 ar.add("Titulo: "+ c.getString(q));
                                 break;
@@ -108,6 +113,11 @@ public class MostrarEvento extends AppCompatActivity {
     public void mostrarMapa(View view)
     {
         Intent i=new Intent(this,Ubicacion.class);
+        startActivity(i);
+    }
+    public void mostrarUsuario(View view)
+    {
+        Intent i=new Intent(this,MostrarUsuario.class);
         startActivity(i);
     }
 

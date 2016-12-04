@@ -81,6 +81,7 @@ public class Registro extends AppCompatActivity {
                 if (u.guardarUsuario()) {
                     Toast.makeText(getBaseContext(), "Usuario registrado.", Toast.LENGTH_SHORT).show();
                     Toast.makeText(getBaseContext(), "Iniciar sesion para continuar.", Toast.LENGTH_SHORT).show();
+                    startActivity(inin);
                     finish();
                 } else {
                     Toast.makeText(getBaseContext(), B.er + "\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos.", Toast.LENGTH_SHORT).show();
