@@ -47,7 +47,7 @@ public class UnirseEvento extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View itemC, int position, long idd) {
                 TextView t=(TextView) itemC;
                 String tit=t.getText().toString();
-                A.S2= id.get(position);
+                A.S5= id.get(position);
                 startActivity(i);
             }
         });

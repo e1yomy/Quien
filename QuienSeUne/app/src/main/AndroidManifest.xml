@@ -66,7 +66,8 @@
         <activity android:name=".MostrarEvento" />
         <activity android:name=".MostrarUsuario" />
         <activity android:name=".MisEventos" />
-        <activity android:name=".MiEvento"></activity>
+        <activity android:name=".MiEvento" />
+        <activity android:name=".VerMiEvento"></activity>
     </application>
 
 </manifest>

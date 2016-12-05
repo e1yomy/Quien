@@ -1,15 +1,19 @@
 package com.my.elyo.quienseune;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,6 +22,7 @@ public class MisEventos extends AppCompatActivity {
     ListView l;
     ArrayList<String> lista = new ArrayList<>();
     ArrayList<String> id = new ArrayList<>();
+    Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +34,10 @@ public class MisEventos extends AppCompatActivity {
         ab.setIcon(R.mipmap.ic_red_flag);
         b=new B(this);
         l=(ListView)findViewById(R.id.listamiseventos);
+        registerForContextMenu(l);
         OnItemClicListener();
         CargarDatos();
+        i=new Intent(this,VerMiEvento.class);
     }
 
     private void CargarDatos() {
@@ -71,9 +78,11 @@ public class MisEventos extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View itemC, int position, long idd) {
                 TextView t=(TextView) itemC;
                 String tit=t.getText().toString();
-                id.get(position);
-
+                A.S5=id.get(position);
+                startActivity(i);
             }
         });
     }
+
+
 }

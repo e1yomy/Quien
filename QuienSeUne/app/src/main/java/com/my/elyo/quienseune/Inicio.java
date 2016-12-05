@@ -49,6 +49,7 @@ public class Inicio extends AppCompatActivity {
     }
     public void cerrarSesion(View view)
     {
+        A.S2="";
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
         finish();

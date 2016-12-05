@@ -1,40 +1,39 @@
 package com.my.elyo.quienseune;
 
 import android.database.Cursor;
-import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MostrarUsuario extends AppCompatActivity {
-    static B b;
+public class VerMiEvento extends AppCompatActivity {
     ListView l;
+    static B b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mostrar_usuario);
+        setContentView(R.layout.activity_ver_mi_evento);
         ActionBar ab=getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
-        ab.setTitle("Detalles de usuario");
-        ab.setIcon(R.mipmap.ic_id_card);
-        l=(ListView)findViewById(R.id.listadetallesusuario);
-
+        ab.setTitle("Informacion del evento");
+        ab.setIcon(R.mipmap.ic_info);
+        l=(ListView)findViewById(R.id.vermievento);
         b=new B(this);
         CargarDatos();
     }
 
     private void CargarDatos() {
-        String id=A.S6;
-        A.S6="";
+        String id=A.S5;
+        A.S5="";
         ArrayList<String> ar = new ArrayList<>();
-        Cursor c= Usuario.mostrarUsuario(id);
+
         try {
+            Cursor c= Evento.mostrarEvento2(id);
             if (c.moveToFirst()) {
                 do {
                     //ar.add(cr.getString(0) + " - " + cr.getString(2)+ ", " + cr.getString(1));
@@ -42,45 +41,54 @@ public class MostrarUsuario extends AppCompatActivity {
                     {
                         switch (q)
                         {
-
-                            case 1:
-                                ar.add("Usuario: "+ c.getString(q));
-                                break;
                             case 2:
-                                ar.add("Teléfono: "+ c.getString(q));
+                                ar.add("Titulo: "+ c.getString(q));
+                                break;
+                            case 3:
+                                ar.add("Fecha de inicio: "+ c.getString(q));
                                 break;
                             case 4:
-                                ar.add("Nombre (s): "+ c.getString(q));
+                                ar.add("Hora de inicio: "+ c.getString(q));
                                 break;
                             case 5:
-                                ar.add("Apellidos (s): "+ c.getString(q));
+                                ar.add("Finaliza el: "+ c.getString(q));
                                 break;
                             case 6:
-                                ar.add("Genero: "+ c.getString(q));
+                                ar.add("Finaliza a las: "+ c.getString(q));
                                 break;
                             case 7:
-                                ar.add("Edad: "+ c.getString(q));
-                                break;
-                            case 8:
                                 ar.add("Ciudad: "+ c.getString(q));
                                 break;
+                            case 8:
+                                ar.add("Nombre del lugar: "+ c.getString(q));
+                                break;
                             case 9:
+                                A.S3=c.getString(q);
+                                break;
+                            case 10:
+                                A.S4=c.getString(q);
+                                break;
+                            case 11:
                                 ar.add("Descripcion: "+ c.getString(q));
                                 break;
+                            case 12:
+                                ar.add("Lugares disponibles: "+ c.getString(q));
+                                break;
                         }
+                        //ar.add(c.getString(q));
                     }
                 } while (c.moveToNext());
             }
         }
         catch (Exception ex)
         {
-            Toast.makeText(getBaseContext(),ex.getMessage() , Toast.LENGTH_SHORT).show();
+
         }
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ar);
         l.setAdapter(adapter);
 
+        //ub=new LatLng(Double.parseDouble(A.S3),Double.parseDouble(A.S4));
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -91,5 +99,4 @@ public class MostrarUsuario extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

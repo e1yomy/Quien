@@ -35,8 +35,8 @@ public class MostrarEvento extends AppCompatActivity {
     }
 
     private void CargarDatos() {
-        String id=A.S2;
-        A.S2="";
+        String id=A.S5;
+        A.S5="";
         ArrayList<String> ar = new ArrayList<>();
         Cursor c= Evento.mostrarEvento(id);
         try {
@@ -49,7 +49,7 @@ public class MostrarEvento extends AppCompatActivity {
                         {
 
                             case 1:
-                                A.S2=c.getString(q);
+                                A.S6=c.getString(q);
                                 //ar.add("Usuario: "+ c.getString(q));
                                 break;
                             case 2:

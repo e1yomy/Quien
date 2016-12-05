@@ -20,11 +20,13 @@ public class A {
     static int i4;
     static int i5;
     static int[] enteros = {i1, i2, i3, i4, i5};
-    static String S1;
-    static String S2;
-    static String S3;
-    static String S4;
-    static String S5;
+
+    static String S1; //Sesion
+    static String S2; //Usuario
+    static String S3; //Latitud
+    static String S4; //Longitud
+    static String S5; //IdEvento
+    static String S6; //otrousuario
     static String[] cadenas = {S1, S2, S3, S4, S5};
     static ArrayList<Integer> AE1;
     static ArrayList<Integer> AE2;

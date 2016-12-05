@@ -67,6 +67,10 @@ public class Evento {
     {
         return MostrarEvento.b.selectRow("eventos","id",id);
     }
+    static Cursor mostrarEvento2(String id)
+    {
+        return VerMiEvento.b.selectRow("eventos","id",id);
+    }
     static Cursor mostrarEventos(String us){
         return MisEventos.b.selectRow("eventos","usuario",us);
     }
