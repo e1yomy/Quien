@@ -130,16 +130,18 @@ public class Usuario {
     }
     static boolean existeUsuario(String u, String p)
     {
-        String lastQuery="select * from usuarios where usuario='"+u+"' and contrasena='"+p+"'";
-        Cursor cr =Registro.b.select(lastQuery);
+        if(u.equals("")||p.equals(""))
+            return false;
+        String lastQuery="select * from usuarios where telefono='"+u+"' and contrasena='"+p+"'";
+        Cursor cr =MainActivity.b.select(lastQuery);
         try {
             if(cr.getCount()<1) {
                 //t.setText("Lista de alumnos vacia.");
             }
             if (cr.moveToFirst()) {
                 do {
-                    if (cr.getString(1).equals(u) && cr.getString(2).equals(p)) {
-                        A.S2=cr.getString(0);
+                    if (cr.getString(2).equals(u) && cr.getString(3).equals(p)) {
+                        A.S2=cr.getString(1);
                         return true;
                     }
                 } while (cr.moveToNext());

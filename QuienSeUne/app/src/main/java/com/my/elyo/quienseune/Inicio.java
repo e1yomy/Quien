@@ -31,6 +31,16 @@ public class Inicio extends AppCompatActivity {
         Intent i = new Intent(this,UnirseEvento.class);
         startActivity(i);
     }
+    public void acercade(View view)
+    {
+        Intent i = new Intent(this,AcercaDe.class);
+        startActivity(i);
+    }
+    public void miseventos(View view)
+    {
+        Intent i = new Intent(this,MisEventos.class);
+        startActivity(i);
+    }
     @Override
     public void onBackPressed()
     {

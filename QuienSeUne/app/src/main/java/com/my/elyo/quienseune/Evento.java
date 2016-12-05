@@ -67,6 +67,9 @@ public class Evento {
     {
         return MostrarEvento.b.selectRow("eventos","id",id);
     }
+    static Cursor mostrarEventos(String us){
+        return MisEventos.b.selectRow("eventos","usuario",us);
+    }
     public void setDatos(String[] datos) {
         this.datos = datos;
     }

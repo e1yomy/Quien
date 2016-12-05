@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mi_evento"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.my.elyo.quienseune.MiEvento">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_refresh"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:id="@+id/imageButton7" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_remove"
+        android:layout_marginEnd="70dp"
+        android:id="@+id/imageButton8"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/imageButton7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Titulo"
+                android:id="@+id/mievento1edit" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Lugar"
+                android:id="@+id/mievento2edit" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Ciudad"
+                android:id="@+id/mievento3edit" />
+
+            <Button
+                android:text="Modificar ubicación del evento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventoGps" />
+
+            <TextView
+                android:text="Fecha y hora de inicio"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento4datepicker"
+                    style="@android:style/Widget.DatePicker" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento5spinner1"
+                    android:layout_weight="1"
+                    android:entries="@array/horas"
+                    />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento5spinner2"
+                    android:layout_weight="1"
+                    android:entries="@array/minutos"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:text="Fecha y hora de fin"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento6datepicker"
+                    style="@android:style/Widget.DatePicker" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento7spinner1"
+                    android:layout_weight="1"
+                    android:entries="@array/horas"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/mievento7spinner2"
+                    android:layout_weight="1"
+                    android:entries="@array/minutos"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    android:layout_weight="1"
+                    android:text="Lugares disponibles"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/evento8spinner"
+                    android:layout_weight="1"
+                    android:entries="@array/disponibilidad"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/mievento9edit"
+                android:hint="Descripción del evento" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

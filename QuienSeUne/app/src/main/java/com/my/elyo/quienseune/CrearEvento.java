@@ -65,11 +65,11 @@ public class CrearEvento extends AppCompatActivity {
     }
     public void guardar(View view){
         e= new Evento();
-        e.setUsuario("yomy");
+        e.setUsuario(A.S2);
         e.setTitulo(e1.getText().toString());
-        e.setFechai(e4.getDayOfMonth()+"/"+e4.getMonth()+"/"+e4.getYear());
+        e.setFechai(e4.getDayOfMonth()+"/"+(e4.getMonth()+1)+"/"+e4.getYear());
         e.setHorai(e51.getSelectedItem().toString()+":"+e52.getSelectedItem().toString());
-        e.setFechaf(e6.getDayOfMonth()+"/"+e6.getMonth()+"/"+e6.getYear());
+        e.setFechaf(e6.getDayOfMonth()+"/"+(e6.getMonth()+1)+"/"+e6.getYear());
         e.setHoraf(e71.getSelectedItem().toString()+":"+e72.getSelectedItem().toString());
         e.setCiudad(e3.getText().toString());
         e.setLugar(e2.getText().toString());
@@ -88,4 +88,6 @@ public class CrearEvento extends AppCompatActivity {
             Toast.makeText(getBaseContext(),B.er+"\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos." , Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }

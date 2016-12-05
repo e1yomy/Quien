@@ -64,7 +64,9 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".AcercaDe" />
         <activity android:name=".MostrarEvento" />
-        <activity android:name=".MostrarUsuario"></activity>
+        <activity android:name=".MostrarUsuario" />
+        <activity android:name=".MisEventos" />
+        <activity android:name=".MiEvento"></activity>
     </application>
 
 </manifest>

@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 a = e1.getText().toString();
                 b = e2.getText().toString();
 
-                //if(Usuario.existeUsuario(a,b))
+                if(Usuario.existeUsuario(a,b))
                 {
                     Intent i = new Intent(this,Inicio.class);
                     startActivity(i);
                 }
-                //else
+                else
                 {
                     Toast.makeText(getBaseContext(),"Numero o contrasena incorrecto, intente nuevamente." , Toast.LENGTH_SHORT).show();
                 }

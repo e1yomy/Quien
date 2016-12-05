@@ -31,7 +31,6 @@ public class MostrarUsuario extends AppCompatActivity {
 
     private void CargarDatos() {
         String id=A.S2;
-        A.S2="";
         ArrayList<String> ar = new ArrayList<>();
         Cursor c= Usuario.mostrarUsuario(id);
         try {
