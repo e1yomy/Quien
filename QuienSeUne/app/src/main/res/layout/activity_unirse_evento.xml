@@ -26,7 +26,7 @@
                 android:id="@+id/textViewer" />
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="454dp"
+                android:layout_height="544dp"
                 android:id="@+id/listView" />
         </LinearLayout>
 

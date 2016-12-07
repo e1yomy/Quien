@@ -1,11 +1,18 @@
 package com.my.elyo.quienseune;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,6 +21,8 @@ import java.util.ArrayList;
 public class MostrarUsuario extends AppCompatActivity {
     static B b;
     ListView l;
+    String te;
+    EditText ed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +33,14 @@ public class MostrarUsuario extends AppCompatActivity {
         ab.setTitle("Detalles de usuario");
         ab.setIcon(R.mipmap.ic_id_card);
         l=(ListView)findViewById(R.id.listadetallesusuario);
-
+        ed=(EditText)findViewById(R.id.editText3);
         b=new B(this);
         CargarDatos();
     }
 
     private void CargarDatos() {
         String id=A.S6;
-        A.S6="";
+        te="";
         ArrayList<String> ar = new ArrayList<>();
         Cursor c= Usuario.mostrarUsuario(id);
         try {
@@ -44,10 +53,11 @@ public class MostrarUsuario extends AppCompatActivity {
                         {
 
                             case 1:
-                                ar.add("Usuario: "+ c.getString(q));
+                                //ar.add("Usuario: "+ c.getString(q));
                                 break;
                             case 2:
-                                ar.add("Teléfono: "+ c.getString(q));
+                                //ar.add("Teléfono: "+ c.getString(q));
+                                te=c.getString(q);
                                 break;
                             case 4:
                                 ar.add("Nombre (s): "+ c.getString(q));
@@ -90,6 +100,37 @@ public class MostrarUsuario extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void llamar(View view){
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:"+te));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(intent);
+    }
+    public void enviarSms(View view){
+        try {
+            String me = ed.getText().toString();
+            if (me.length() > 5) {
+                SmsManager.getDefault().sendTextMessage(te, null, me, null, null);
+                Toast.makeText(getBaseContext(),"Mensaje enviado correctamente." , Toast.LENGTH_SHORT).show();
+                ed.setText("");
+            }
+            else
+                Toast.makeText(getBaseContext(),"Mensaje muy corto, haz que valga la pena." , Toast.LENGTH_SHORT).show();
+
+        }
+        catch(Exception ex)
+        {
+            Toast.makeText(getBaseContext(),"Ha ocurrito un error inesperado.\nIntenta nuevamente en unos momentos." , Toast.LENGTH_SHORT).show();
+        }
+    }
+    @Override
+    public void onBackPressed()
+    {
+        finish();
     }
 
 }

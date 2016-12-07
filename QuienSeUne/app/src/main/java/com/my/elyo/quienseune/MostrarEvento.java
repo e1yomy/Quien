@@ -120,5 +120,9 @@ public class MostrarEvento extends AppCompatActivity {
         Intent i=new Intent(this,MostrarUsuario.class);
         startActivity(i);
     }
-
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+    }
 }

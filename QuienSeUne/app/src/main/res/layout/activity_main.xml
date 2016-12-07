@@ -59,7 +59,7 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:inputType="text"
-                    android:digits="qwertyuioplkjhgfdsazxcvbnm1234567890"/>
+                    android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:maxLength="10"
-                    android:digits="qwertyuioplkjhgfdsazxcvbnm1234567890"/>
+                    android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"/>
 
                 <Button
                     android:text="Iniciar sesión"

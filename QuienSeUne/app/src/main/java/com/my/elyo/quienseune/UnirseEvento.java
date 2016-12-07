@@ -85,5 +85,10 @@ public class UnirseEvento extends AppCompatActivity{
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
         l.setAdapter(adapter);
     }
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+    }
 
 }

@@ -12,6 +12,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+
+
+
 
     <application
         android:allowBackup="true"
@@ -45,10 +51,14 @@
             android:theme="@style/Principal" />
         <activity
             android:name=".Inicio"
-            android:theme="@style/Principal" />
-        <activity android:name=".Registro" />
-        <activity android:name=".CrearEvento" />
-        <activity android:name=".UnirseEvento" />
+            android:theme="@style/Principal"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Registro"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CrearEvento"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".UnirseEvento"
+            android:screenOrientation="portrait"/>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -62,14 +72,22 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBK-RkMU4_blSX6YRbuzIFO5WS8lrmhVWg" />
 
-        <activity android:name=".AcercaDe" />
-        <activity android:name=".MostrarEvento" />
-        <activity android:name=".MostrarUsuario" />
-        <activity android:name=".MisEventos" />
-        <activity android:name=".MiEvento" />
-        <activity android:name=".VerMiEvento" />
-        <activity android:name=".GuardarUbicacion" />
-        <activity android:name=".VerUbicacion"></activity>
+        <activity android:name=".AcercaDe"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MostrarEvento"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MostrarUsuario"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MisEventos"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MiEvento"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".VerMiEvento"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GuardarUbicacion"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".VerUbicacion"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

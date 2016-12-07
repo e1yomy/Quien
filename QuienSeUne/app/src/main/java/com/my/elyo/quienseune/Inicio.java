@@ -62,4 +62,7 @@ public class Inicio extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+    public void salir(View view){
+        finish();
+    }
 }
