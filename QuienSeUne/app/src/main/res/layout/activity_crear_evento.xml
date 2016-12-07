@@ -86,6 +86,14 @@
                     />
 
             </LinearLayout>
+
+            <Button
+                android:text="asignar fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button9"
+                android:onClick="showDialogOnButtonClick"/>
+
             <TextView
                 android:text="Fecha y hora de fin"
                 android:layout_width="178dp"
