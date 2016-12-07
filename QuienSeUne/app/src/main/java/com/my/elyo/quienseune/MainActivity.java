@@ -2,6 +2,7 @@ package com.my.elyo.quienseune;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    SharedPreferences p ;
     static B b;
     EditText e1;
     EditText e2;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         b= new B(this);
         e1=(EditText)findViewById(R.id.editText);
         e2=(EditText)findViewById(R.id.editText2);
+        p = getSharedPreferences("P", Context.MODE_PRIVATE);
     }
 
     public void registrarse(View view){
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if(Usuario.existeUsuario(a,b))
                 {
+                    SharedPreferences.Editor e=p.edit();
+                    e.remove("sesion");
+                    e.putBoolean("sesion",true);
+                    e.putString("usuario",a);
+                    e.commit();
                     Intent i = new Intent(this,Inicio.class);
                     startActivity(i);
                 }

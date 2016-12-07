@@ -22,6 +22,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/registro1edit"
+                android:hint="Nombre de usuario"
+                android:textSize="20sp"
+                android:paddingBottom="20dp"
+                android:maxLength="10"
+                android:digits="1234567890qwertyuioplkjhgfdsazxcvbnm"/>
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -32,22 +44,14 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:ems="10"
                 android:id="@+id/registro2edit"
                 android:hint="Teléfono"
-                android:textSize="20sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/registro1edit"
-                android:hint="Nombre de usuario"
                 android:textSize="20sp"
-                android:paddingBottom="20dp"
-                />
+                android:maxLength="10"
+                android:singleLine="true"
+                android:digits="1234567890"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -55,7 +59,9 @@
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/registro1contra"
-                android:hint="Contraseña" />
+                android:hint="Contraseña"
+                android:maxLength="10"
+                android:digits="1234567890qwertyuioplkjhgfdsazxcvbnm"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -63,7 +69,9 @@
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/registro2contra"
-                android:hint="Confirmar contraseña" />
+                android:hint="Confirmar contraseña"
+                android:maxLength="10"
+                android:digits="1234567890qwertyuioplkjhgfdsazxcvbnm"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -78,7 +86,8 @@
                     android:id="@+id/registro3edit"
                     android:hint="Nombre (s)"
                     android:paddingBottom="15dp"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:digits="qwertyuioplkjhgfdsazxcvbnm"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -89,7 +98,8 @@
                     android:hint="Apellido (s)"
                     android:paddingBottom="15dp"
                     android:textSize="20sp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:digits="qwertyuioplkjhgfdsazxcvbnm"/>
 
             </LinearLayout>
 
@@ -146,7 +156,8 @@
                 android:id="@+id/registro7edit"
                 android:hint="Ciudad"
                 android:paddingBottom="15dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:digits="qwertyuioplkjhgfdsazxcvbnm"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -156,10 +167,10 @@
                 android:id="@+id/registro8edit"
                 android:hint="Descripción personal"
                 android:textAlignment="textStart"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:digits="qwertyuioplkjhgfdsazxcvbnm"/>
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -172,12 +183,19 @@
                     android:layout_height="60dp" />
 
                 <ImageButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="176dp"
                     app:srcCompat="@drawable/accept"
                     android:id="@+id/imageButton3"
                     android:scaleType="fitCenter"
                     android:onClick="guardar"
                     android:layout_height="60dp" />
+            </GridLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             </LinearLayout>
 
             <GridLayout
@@ -192,7 +210,7 @@
                     android:layout_row="0"
                     android:layout_column="7"
                     android:onClick="guardar"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
                 <Button
                     android:text="Cancelar"
@@ -202,7 +220,7 @@
                     android:layout_column="1"
                     android:layout_width="150dp"
                     android:onClick="calcelar"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
             </GridLayout>
 

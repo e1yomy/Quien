@@ -65,37 +65,66 @@ public class Registro extends AppCompatActivity {
         startActivity(inin);
         finish();
     }
-    public void guardar(View view){
-        if(c1.getText().toString().equals(c2.getText().toString())) {
-            u = new Usuario();
-            u.setUsuario(e1.getText().toString());
-            u.setTelefono(e2.getText().toString());
-            u.setContrasena(c1.getText().toString());
-            u.setNombre(e3.getText().toString());
-            u.setApellido(e4.getText().toString());
-            u.setSexo(e5.getSelectedItem().toString());
-            u.setEdad(e6.getSelectedItem().toString());
-            u.setCiudad(e7.getText().toString());
-            u.setDescripcion(e8.getText().toString());
-            if(u.noHayVacios()) {
-                if (u.guardarUsuario()) {
-                    Toast.makeText(getBaseContext(), "Usuario registrado.", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getBaseContext(), "Iniciar sesion para continuar.", Toast.LENGTH_SHORT).show();
-                    startActivity(inin);
-                    finish();
-                } else {
-                    Toast.makeText(getBaseContext(), B.er + "\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos.", Toast.LENGTH_SHORT).show();
-                }
-            }
-            else {
-                Toast.makeText(getBaseContext(), "Verificar los datos por datos vacios.", Toast.LENGTH_SHORT).show();
-            }
+    public void guardar(View view) {
+        boolean bien = true;
+        String s1 = e1.getText().toString();
+        String s2 = e2.getText().toString();
+        String s3 = c1.getText().toString();
+        String s4 = e3.getText().toString();
+        String s5 = e4.getText().toString();
+        String s6 = e5.getSelectedItem().toString();
+        String s7 = e6.getSelectedItem().toString();
+        String s8 = e7.getText().toString();
+        String s9 = e8.getText().toString();
+
+        if (s1.length() < 3) {
+            e1.setError("Nombre de usuario muy corto");
+            bien=false;
         }
-        else
-        {
-            c1.setText("");
-            c2.setText("");
-            Toast.makeText(getBaseContext(),"Los campos de contrasena no coinciden.\nVerificar y reintentar." , Toast.LENGTH_SHORT).show();
+        if (s2.length() < 10) {
+            e2.setError("Ingresar número de teléfono a 10 digitos.");
+            bien=false;
+        }
+        if (s3.length()<5){
+            c1.setError("Contrasena muy corta.");
+            bien=false;
+        }
+        if (s4.length()<2){
+            e3.setError("Nombre muy corto.");
+            bien=false;
+        }
+        if (s5.length()<2){
+            e4.setError("Apellido muy corto.");
+            bien=false;
+        }
+
+        if (bien) {
+            if (s3.equals(c2.getText().toString())) {
+                u = new Usuario();
+                u.setUsuario(s1);
+                u.setTelefono(s2);
+                u.setContrasena(s3);
+                u.setNombre(s4);
+                u.setApellido(s5);
+                u.setSexo(s6);
+                u.setEdad(s7);
+                u.setCiudad(s8);
+                u.setDescripcion(s9);
+                if (u.noHayVacios()) {
+                    if (u.guardarUsuario()) {
+                        Toast.makeText(getBaseContext(), "Usuario registrado.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "Iniciar sesion para continuar.", Toast.LENGTH_SHORT).show();
+                        startActivity(inin);
+                        finish();
+                    } else {
+                        Toast.makeText(getBaseContext(), B.er + "\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getBaseContext(), "Verificar los datos por datos vacios.", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                c2.setError("Las contrasenas no coinciden.");
+            }
         }
     }
 
