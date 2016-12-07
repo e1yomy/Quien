@@ -47,7 +47,8 @@
                 android:text="Asignar ubicación al evento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/eventoGps" />
+                android:id="@+id/eventoGps"
+                android:onClick="ubicacion"/>
 
             <TextView
                 android:text="Fecha y hora de inicio"

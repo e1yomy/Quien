@@ -1,10 +1,12 @@
 package com.my.elyo.quienseune;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -87,7 +89,6 @@ public class VerMiEvento extends AppCompatActivity {
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ar);
         l.setAdapter(adapter);
 
-        //ub=new LatLng(Double.parseDouble(A.S3),Double.parseDouble(A.S4));
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -98,5 +99,10 @@ public class VerMiEvento extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void mostrarMapa(View view)
+    {
+        Intent i=new Intent(this,VerUbicacion.class);
+        startActivity(i);
     }
 }

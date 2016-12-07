@@ -112,7 +112,7 @@ public class MostrarEvento extends AppCompatActivity {
     }
     public void mostrarMapa(View view)
     {
-        Intent i=new Intent(this,Ubicacion.class);
+        Intent i=new Intent(this,VerUbicacion.class);
         startActivity(i);
     }
     public void mostrarUsuario(View view)

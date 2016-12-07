@@ -1,9 +1,9 @@
 package com.my.elyo.quienseune;
 
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
@@ -49,6 +49,8 @@ public class CrearEvento extends AppCompatActivity {
         e72 =(Spinner)findViewById(R.id.evento7spinner2);
         e8 =(Spinner)findViewById(R.id.evento8spinner);
         e9 = (EditText)findViewById(R.id.evento9edit);
+        A.S3="";
+        A.S4="";
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -60,10 +62,18 @@ public class CrearEvento extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void ubicacion(View view){
+        startActivity(new Intent(this,GuardarUbicacion.class));
+    }
     public void cancelar(View view){
         finish();
     }
     public void guardar(View view){
+        if(A.S3.equals("")||A.S4.equals(""))
+        {
+            Toast.makeText(getBaseContext(),"Debes seleccionar la ubicacion del evento  ." , Toast.LENGTH_SHORT).show();
+            return;
+        }
         e= new Evento();
         e.setUsuario(A.S2);
         e.setTitulo(e1.getText().toString());
@@ -73,8 +83,8 @@ public class CrearEvento extends AppCompatActivity {
         e.setHoraf(e71.getSelectedItem().toString()+":"+e72.getSelectedItem().toString());
         e.setCiudad(e3.getText().toString());
         e.setLugar(e2.getText().toString());
-        e.setLatitud("--");
-        e.setLongitud("--");
+        e.setLatitud(A.S3);
+        e.setLongitud(A.S4);
         e.setDisponibilidad(e8.getSelectedItem().toString());
         e.setDescripcion(e9.getText().toString());
 
@@ -85,7 +95,7 @@ public class CrearEvento extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getBaseContext(),B.er+"\nAlgo ha salido mal. Intente nuevamente dentro de unos minutos." , Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(),"Algo ha salido mal. Verifique los datos e intente nuevamente.\n"+B.er , Toast.LENGTH_SHORT).show();
         }
     }
 

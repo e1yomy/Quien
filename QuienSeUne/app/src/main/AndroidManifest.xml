@@ -8,6 +8,10 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -56,18 +60,16 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyBK-RkMU4_blSX6YRbuzIFO5WS8lrmhVWg" />
 
-        <activity
-            android:name=".Ubicacion"
-            android:label="@string/title_activity_ubicacion"
-            android:theme="@style/AppTheme" />
         <activity android:name=".AcercaDe" />
         <activity android:name=".MostrarEvento" />
         <activity android:name=".MostrarUsuario" />
         <activity android:name=".MisEventos" />
         <activity android:name=".MiEvento" />
-        <activity android:name=".VerMiEvento"></activity>
+        <activity android:name=".VerMiEvento" />
+        <activity android:name=".GuardarUbicacion" />
+        <activity android:name=".VerUbicacion"></activity>
     </application>
 
 </manifest>
