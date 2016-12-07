@@ -83,6 +83,8 @@ public class MisEventos extends AppCompatActivity {
             }
         });
     }
-
+    public void onResume(){
+        CargarDatos();
+    }
 
 }

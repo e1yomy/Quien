@@ -80,8 +80,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".MisEventos"
             android:screenOrientation="portrait"/>
-        <activity android:name=".MiEvento"
-            android:screenOrientation="portrait"/>
         <activity android:name=".VerMiEvento"
             android:screenOrientation="portrait"/>
         <activity android:name=".GuardarUbicacion"

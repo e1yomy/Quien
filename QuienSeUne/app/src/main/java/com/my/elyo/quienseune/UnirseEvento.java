@@ -90,5 +90,8 @@ public class UnirseEvento extends AppCompatActivity{
     {
         finish();
     }
+    public void onResume(){
+        Consulta();
+    }
 
 }

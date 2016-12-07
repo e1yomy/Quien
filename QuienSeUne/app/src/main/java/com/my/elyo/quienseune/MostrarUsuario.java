@@ -132,5 +132,7 @@ public class MostrarUsuario extends AppCompatActivity {
     {
         finish();
     }
-
+    public void onResume(){
+        CargarDatos();
+    }
 }

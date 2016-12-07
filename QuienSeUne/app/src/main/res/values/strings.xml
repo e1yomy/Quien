@@ -157,4 +157,11 @@
         <item>hombre.png</item>
         <item>mujer.png</item>
     </string-array>
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@id/inicio"
+            android:title="Inicio"
+            ></item>
+    </menu>
 </resources>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,6 @@ public class VerMiEvento extends AppCompatActivity {
 
     private void CargarDatos() {
         String id=A.S5;
-        A.S5="";
         ArrayList<String> ar = new ArrayList<>();
 
         try {
@@ -104,5 +104,17 @@ public class VerMiEvento extends AppCompatActivity {
     {
         Intent i=new Intent(this,VerUbicacion.class);
         startActivity(i);
+    }
+    public void eliminar(View view)
+    {
+        if(Evento.eliminarEvento(A.S5))
+        {
+            Toast.makeText(getBaseContext(),"Evento borrado exitosamente." , Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+    @Override
+    public void onResume(){
+        CargarDatos();
     }
 }

@@ -59,7 +59,7 @@ public class B extends SQLiteOpenHelper{
     public boolean deleteQuery(String t, String w, String v)
     {
         try{
-            lastQuery="delete from "+table+" where "+w+" = '"+v+"'";
+            lastQuery="delete from "+t+" where "+w+" = '"+v+"'";
             getWritableDatabase().execSQL(lastQuery);
             return true;
         }

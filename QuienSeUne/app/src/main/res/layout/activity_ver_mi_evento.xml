@@ -21,12 +21,13 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_pencil"
+        app:srcCompat="@mipmap/ic_remove"
         android:layout_marginEnd="72dp"
         android:id="@+id/imageButton9"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:background="@null"/>
+        android:background="@null"
+        android:onClick="eliminar" />
 
     <ImageButton
         android:layout_width="wrap_content"

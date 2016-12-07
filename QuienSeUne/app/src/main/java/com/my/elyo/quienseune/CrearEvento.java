@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
@@ -58,6 +60,7 @@ public class CrearEvento extends AppCompatActivity {
             case android.R.id.home: //hago un case por si en un futuro agrego mas opciones
                 finish();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -98,6 +101,9 @@ public class CrearEvento extends AppCompatActivity {
             Toast.makeText(getBaseContext(),"Algo ha salido mal. Verifique los datos e intente nuevamente.\n"+B.er , Toast.LENGTH_SHORT).show();
         }
     }
-
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true; /** true -> el menú ya está visible */
+    }
 
 }

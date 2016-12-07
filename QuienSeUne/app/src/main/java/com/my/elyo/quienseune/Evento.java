@@ -74,6 +74,10 @@ public class Evento {
     static Cursor mostrarEventos(String us){
         return MisEventos.b.selectRow("eventos","usuario",us);
     }
+    static boolean eliminarEvento(String id)
+    {
+        return VerMiEvento.b.deleteQuery("eventos","id",id);
+    }
     public void setDatos(String[] datos) {
         this.datos = datos;
     }

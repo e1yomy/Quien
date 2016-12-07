@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inicio"
+        android:id="@+id/inicio"
+        android:icon="@mipmap/ic_hombre" />
+    <item android:title="Crear Evento"
+        android:id="@+id/crearevento"
+        android:icon="@mipmap/ic_add" />
+    <item android:title="Unirse"
+        android:id="@+id/unirse"
+        android:icon="@mipmap/ic_find" />
+    <item android:title="Mis eventos"
+        android:id="@+id/miseventos"
+        android:icon="@mipmap/ic_red_flag" />
+    <item android:title="Cerrar aplicación"
+        android:id="@+id/salir"
+        android:icon="@mipmap/ic_shut_down" />
+</menu>

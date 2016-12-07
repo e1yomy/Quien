@@ -63,4 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(),"Campos numero o contrasena vacio, intente nuevamente." , Toast.LENGTH_SHORT).show();
             }
     }
+    public void salir(View view)
+    {
+        finish();
+    }
 }
