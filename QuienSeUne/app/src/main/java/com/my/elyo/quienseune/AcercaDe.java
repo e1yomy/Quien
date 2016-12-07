@@ -13,7 +13,7 @@ public class AcercaDe extends AppCompatActivity {
         ActionBar ab=getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
-        ab.setTitle("Eventos");
+        ab.setTitle("Acerca de");
         ab.setIcon(R.mipmap.ic_help);
 
     }
